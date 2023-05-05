@@ -1,3 +1,6 @@
+# About this project
+In this project, react props, useState() and useEffect() hooks, map() method and localStorage concepts are used.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
