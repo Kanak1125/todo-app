@@ -16,7 +16,7 @@ export default function App() {
         currentYear: "",
         isCompleted: false
     });
-    const [toDos, setToDos] = React.useState(JSON.parse(localStorage.getItem('toDos')));   // state of to-dos is array of objects stored in the local storage... // retreiving data from the localStorage;
+    const [toDos, setToDos] = React.useState(JSON.parse(localStorage.getItem('toDos')) || []);   // state of to-dos is array of objects stored in the local storage... // retreiving data from the localStorage of [] if there is no data in the localStorage...;
 
     React.useEffect(() => {
         localStorage.setItem('toDos', JSON.stringify(toDos));
@@ -61,6 +61,7 @@ export default function App() {
     // function to delete Todo using filter method()...
     function deleteTodo(id) {
         setToDos(prevToDos => {
+            // return prevToDos == [] ? prevToDos : prevToDos.filter(todo => todo.id !== id);
             return prevToDos.filter(todo => todo.id !== id);
         })
     }
